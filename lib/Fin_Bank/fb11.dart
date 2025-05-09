@@ -8,40 +8,49 @@ class Cloud5 extends StatefulWidget {
 }
 
 class _Cloud5State extends State<Cloud5> {
-  List<bool> isExpandedList = [false, false, false, false, false];
+  List<bool> isExpandedList = List.filled(7, false); // updated to 7 items
 
   final List<Map<String, String>> faqList = [
     {
-      'question': 'What cloud platforms do you support?',
+      'question': "How do you keep financial applications secure?",
       'answer':
-          'We support major cloud platforms like AWS, Microsoft Azure, and Google Cloud, ensuring flexibility and scalability for your business.',
+      "We use advanced security tools and follow the latest best practices to protect your data and financial transactions.",
     },
     {
-      'question': 'How secure are your cloud solutions?',
+      'question': "Can you work with our current core banking systems?",
       'answer':
-          'Our cloud services include encryption, access control, and compliance with industry standards like HIPAA, GDPR, and ISO certifications.',
+      "Yes, we can connect and integrate with your existing systems to make everything work smoothly together.",
     },
     {
-      'question': 'Can you migrate our existing infrastructure to the cloud?',
+      'question': "How do you manage compliance with financial rules and regulations?",
       'answer':
-          'Yes, we offer complete cloud migration services with minimal downtime and full data integrity across platforms.',
+      "We build solutions that follow major regulations like GDPR, PSD2, Basel III, and AML/KYC to help you stay compliant.",
     },
     {
-      'question': 'Do you provide ongoing cloud management?',
+      'question': "What technologies do you use for your financial IT solutions?",
       'answer':
-          'Absolutely. We offer end-to-end support, including monitoring, optimization, and troubleshooting of your cloud environment.',
+      "We use trusted, modern technologies like React, Java, Spring Boot, Node.js, microservices, and cloud platforms.",
     },
     {
-      'question': 'Are your cloud solutions customizable?',
+      'question': "How long does it take to set up a digital banking system?",
       'answer':
-          'Yes, we tailor our cloud architecture, deployment, and services according to your unique business requirements.',
+      "The time depends on your needs, but we usually complete most projects within a few weeks to a few months.",
+    },
+    {
+      'question': "Do you offer support after the system is launched?",
+      'answer':
+      "Yes, we provide full support, updates, and maintenance after launch to make sure everything keeps running smoothly.",
+    },
+    {
+      'question': "How do you protect customer data in financial apps?",
+      'answer':
+      "We follow strict privacy rules and use strong encryption and security methods to keep customer data safe.",
     },
   ];
 
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    bool isMobile = screenWidth < 600;
 
     return Container(
       color: Colors.white,
@@ -50,23 +59,18 @@ class _Cloud5State extends State<Cloud5> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          // Header
           const Text(
-            'Frequently Asked Questions About Cloud Solutions',
+            'Frequently Asked Questions About Financial IT Solutions',
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 16),
-
-          // Subtext
           const Text(
-            'Find answers to common questions about our cloud services and how we can help your business scale online.',
+            'Find answers to common questions about our finance and banking IT services and how we can help your institution thrive in the digital age.',
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 16, color: Colors.black87),
           ),
           const SizedBox(height: 30),
-
-          // FAQ List
           ListView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
@@ -97,7 +101,7 @@ class _Cloud5State extends State<Cloud5> {
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-children: [
+                        children: [
                           Flexible(
                             child: Text(
                               faqList[index]['question']!,
@@ -114,7 +118,6 @@ children: [
                       ),
                     ),
                   ),
-                  // Answer section
                   if (isExpandedList[index])
                     Container(
                       width: double.infinity,

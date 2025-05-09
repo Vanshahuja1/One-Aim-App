@@ -37,7 +37,7 @@ class ContainFB extends StatelessWidget {
                 Am7(),
                 AM8(),
                 AM9(),
-                AmTcSection(),
+
                 Cloud4(),
                 Cloud5(),
                 Cloud6(),

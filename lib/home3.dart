@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:intl/intl.dart';
+import 'package:visibility_detector/visibility_detector.dart';
 class HomeSection extends StatelessWidget {
   const HomeSection({super.key});
 
@@ -56,28 +57,73 @@ class HomeSection extends StatelessWidget {
   }
 }
 
-class AnimatedCounter extends StatelessWidget {
+
+
+
+class AnimatedCounter extends StatefulWidget {
   final int count;
   final String title;
 
-  const AnimatedCounter({super.key, required this.count, required this.title});
+  const AnimatedCounter({
+    super.key,
+    required this.count,
+    required this.title,
+  });
+
+  @override
+  State<AnimatedCounter> createState() => _AnimatedCounterState();
+}
+
+class _AnimatedCounterState extends State<AnimatedCounter> {
+  bool _isVisible = false;
+
+  String _formatNumber(int value) {
+    final formatter = NumberFormat.decimalPattern();
+    return formatter.format(value);
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        TweenAnimationBuilder(
-          tween: IntTween(begin: 0, end: count),
-          duration: const Duration(seconds: 3),
-          builder: (context, value, child) => Text(
-            "$value",
+    return VisibilityDetector(
+      key: Key(widget.title), // Unique key for each counter
+      onVisibilityChanged: (info) {
+        if (info.visibleFraction > 0.5 && !_isVisible) {
+          setState(() {
+            _isVisible = true;
+          });
+        }
+      },
+      child: Column(
+        children: [
+          _isVisible
+              ? TweenAnimationBuilder<int>(
+            tween: IntTween(begin: 0, end: widget.count),
+            duration: const Duration(seconds: 3),
+            builder: (context, value, child) => Text(
+              _formatNumber(value),
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          )
+              : Text(
+            "0",
             style: const TextStyle(
-                color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
+              color: Colors.white,
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+            ),
           ),
-        ),
-        const SizedBox(height: 4),
-        Text(title, style: const TextStyle(color: Colors.grey)),
-      ],
+          const SizedBox(height: 4),
+          Text(
+            widget.title,
+            style: const TextStyle(color: Colors.grey),
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
     );
   }
 }
