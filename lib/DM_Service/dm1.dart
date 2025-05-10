@@ -96,17 +96,17 @@ class _Web1State extends State<Web1> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                deliverCell(Icons.design_services, "Mastery of Meta Ads",
+                deliverCell(Icons.ads_click, "Mastery of Meta Ads",
                     "Get in Touch with the Correct People at the Correct Time."),
-                deliverCell(Icons.speed, "Google Ads Dominance",
+                deliverCell(Icons.ad_units, "Google Ads Dominance",
                     "Get Noticed Where It Counts Most"),
-                deliverCell(Icons.style, "Optimization of Search Engines (SEO)",
+                deliverCell(Icons.search, "Optimization of Search Engines (SEO)",
                     "Grow gradually, Remain at the top"),
-                deliverCell(Icons.code, "Power of Social Media",
+                deliverCell(Icons.share, "Power of Social Media",
                     "Convert Scrolls into Revenue"),
-                    deliverCell(Icons.style, "Linking Content",
+                    deliverCell(Icons.link, "Linking Content",
                     "Encourage Growth with Smart Storytelling"),
-                deliverCell(Icons.code, "Email Marketing Strategies That Work",
+                deliverCell(Icons.email, "Email Marketing Strategies That Work",
                     "Send the Appropriate Message at the Appropriate Time"),
               ],
             )
