@@ -40,7 +40,7 @@ class ContainGD extends StatelessWidget {
                 AmTcSection(),
                 Cloud4(),
                 Cloud5(),
-                Cloud6(),
+                ContactInfoSection(),
                 Cloud7(),
 
               ],
