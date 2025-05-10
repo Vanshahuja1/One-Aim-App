@@ -63,7 +63,7 @@ class _Web6State extends State<Web6> with TickerProviderStateMixin {
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
             ),
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.deepPurpleAccent,
+              backgroundColor: Colors.redAccent,
               foregroundColor: Colors.white,
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
               shape: RoundedRectangleBorder(
