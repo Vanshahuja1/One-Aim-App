@@ -88,7 +88,7 @@ class _AmTcSectionState extends State<AmTcSection> {
           ElevatedButton(
             onPressed: _toggleTechnologies,
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.black,
+              backgroundColor: Colors.redAccent,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30),
               ),
