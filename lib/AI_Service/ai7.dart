@@ -12,27 +12,27 @@ class _Cloud5State extends State<Web7> {
 
   final List<Map<String, String>> faqList = [
     {
-      'question': 'What cloud platforms do you support?',
+      'question': 'Which types of businesses do you collaborate with?',
       'answer':
           'Across sectors like healthcare, retail, SaaS, finance, and manufacturing, we collaborate with start-ups, large corporations, and everything in between.',
     },
     {
-      'question': 'How secure are your cloud solutions?',
+      'question': 'Can AI Works with the tool we have now?',
       'answer':
           'Our team makes sure AI integrates with your current workflows and systems so you donot have to start from scratch.',
     },
     {
-      'question': 'Can you migrate our existing infrastructure to the cloud?',
+      'question': 'Is the AI you are developing safe and legal?',
       'answer':
           'Of course, to guarantee the ethical and secure application of AI, we adhere to stringent data protection and regulatory regulations.',
     },
     {
-      'question': 'Do you provide ongoing cloud management?',
+      'question': 'Do you provide continuing assistance?',
       'answer':
           'We offer comprehensive post-deployment assistance, from team training to performance monitoring.',
     },
     {
-      'question': 'Are your cloud solutions customizable?',
+      'question': 'How long does it takes to start the project using AI?',
       'answer':
           'Most projects take four to twelve weeks to complete from discovery to deployment, depending on their complexity.',
     },
@@ -52,7 +52,7 @@ class _Cloud5State extends State<Web7> {
         children: [
           // Header
           const Text(
-            'Frequently Asked Questions About Cloud Solutions',
+            'Frequently Asked Questions About AL-ML Solutions',
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
@@ -60,7 +60,7 @@ class _Cloud5State extends State<Web7> {
 
           // Subtext
           const Text(
-            'Find answers to common questions about our cloud services and how we can help your business scale online.',
+            'Find answers to common questions about our AI & ML IT services and how we can help your project thrive in the AI age.',
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 16, color: Colors.black87),
           ),
