@@ -39,7 +39,7 @@ return Container(
           });
         },
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.redAccent,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
           ),
@@ -47,7 +47,7 @@ return Container(
         ),
         child: const Text(
           'Check Our Platforms',
-          style: TextStyle(fontSize: 16),
+          style: TextStyle(fontSize: 16,color: Colors.white,),
         ),
       ),
       const SizedBox(height: 20),
