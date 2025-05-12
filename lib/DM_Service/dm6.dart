@@ -70,7 +70,7 @@ class _Web6State extends State<Web6> with TickerProviderStateMixin {
                 borderRadius: BorderRadius.circular(30),
               ),
               elevation: 5,
-              shadowColor: Colors.deepPurpleAccent.withOpacity(0.3),
+              shadowColor: Colors.redAccent.withOpacity(0.3),
             ),
           ),
           const SizedBox(height: 30),
@@ -93,24 +93,24 @@ class _Web6State extends State<Web6> with TickerProviderStateMixin {
                     children: [
                       successCard(
                         imageUrl: 'https://via.placeholder.com/400x200',
+                        domain: 'Retail',
+                        title: 'E-commerce Revenue Growth',
+                        description:
+                            'Implemented a comprehensive digital marketing strategy for an e-commerce retailer, including Google Shopping ads, Meta retargeting, and SEO. Resulted in a 215% increase in online revenue and 180% growth in ROAS (Return on Ad Spend) within 6 months.',
+                      ),
+                      successCard(
+                        imageUrl: 'https://via.placeholder.com/400x200',
+                        domain: 'SaaS',
+                        title: 'B2B Lead Generation Campaign',
+                        description:
+                            'Developed and executed a multi-channel lead generation campaign for a B2B SaaS company, focusing on LinkedIn Ads, Google Search, and content marketing. Generated 430+ qualified leads in the first quarter, resulting in 28 new enterprise clients.',
+                      ),
+                      successCard(
+                        imageUrl: 'https://via.placeholder.com/400x200',
                         domain: 'Healthcare',
-                        title: 'Healthcare Data Security Overhaul',
+                        title: 'Local Business Visibility Boost',
                         description:
-                            'Implemented comprehensive cloud security measures for a healthcare provider, ensuring HIPAA compliance and protecting sensitive patient data while improving system performance.',
-                      ),
-                      successCard(
-                        imageUrl: 'https://via.placeholder.com/400x200',
-                        domain: 'E-commerce',
-                        title: 'Scalable Infrastructure for Growing Start-Up',
-                        description:
-                            'Deployed scalable, cost-effective cloud hosting and auto-scaling solutions that allowed a fast-growing e-commerce brand to handle surges in traffic with ease.',
-                      ),
-                      successCard(
-                        imageUrl: 'https://via.placeholder.com/400x200',
-                        domain: 'Education',
-                        title: 'Virtual Classroom Cloud Integration',
-                        description:
-                            'Built and secured a virtual learning platform using cloud tools, reducing downtime, enhancing collaboration, and improving access for thousands of students.',
+                            'Implemented local SEO and Google Business Profile optimization for a healthcare provider with multiple locations. Achieved first-page rankings for 45 high-value keywords and increased organic traffic by 320%, resulting in a 75% increase in appointment bookings.',
                       ),
                     ],
                   ),
