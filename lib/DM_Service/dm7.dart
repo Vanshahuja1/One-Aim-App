@@ -12,19 +12,19 @@ class _Cloud5State extends State<Web7> {
 
   final List<Map<String, String>> faqList = [
     {
-      'question': 'What cloud platforms do you support?',
+      'question': 'What facilities do you provide for digital marketing?',
       'answer':
-          'We support major cloud platforms like AWS, Microsoft Azure, and Google Cloud, ensuring flexibility and scalability for your business.',
+          'To help you increase your online visibility and generate income, we provide a comprehensive range of services, such as Google Ads, Meta Ads (Facebook & Instagram), SEO, social media marketing, content marketing, email marketing, and marketing automation.',
     },
     {
-      'question': 'How secure are your cloud solutions?',
+      'question': 'Will my campaigns have a enthusiastic account manager?',
       'answer':
-          'Our cloud services include encryption, access control, and compliance with industry standards like HIPAA, GDPR, and ISO certifications.',
+          'Yes, a committed digital marketing specialist who is alert of your company objectives will work directly with you to guarantee strategic alignment, timely updates, and clear communication throughout the campaign.',
     },
     {
-      'question': 'Can you migrate our existing infrastructure to the cloud?',
+      'question': 'Are the add acounts and data you generated of my campaigns mine?',
       'answer':
-          'Yes, we offer complete cloud migration services with minimal downtime and full data integrity across platforms.',
+          'Of course, our top priority is transparency. Ad accounts, campaign data, analytics, and creative assets that we handle for you will all be fully owned and accessible by you.',
     },
     {
       'question': 'Do you provide ongoing cloud management?',
@@ -32,9 +32,9 @@ class _Cloud5State extends State<Web7> {
           'Absolutely. We offer end-to-end support, including monitoring, optimization, and troubleshooting of your cloud environment.',
     },
     {
-      'question': 'Are your cloud solutions customizable?',
+      'question': 'Can you assist me in creating leads for my company?',
       'answer':
-          'Yes, we tailor our cloud architecture, deployment, and services according to your unique business requirements.',
+          'Yes, one of our areas of expertise is lead generation. We employ automation tools, customized landing pages, and data-driven ad tactics to draw in, collect, and develop excellent leads for your company.',
     },
   ];
 
@@ -52,7 +52,7 @@ class _Cloud5State extends State<Web7> {
         children: [
           // Header
           const Text(
-            'Frequently Asked Questions About Cloud Solutions',
+            'Frequently Asked Questions About Digital Marketing',
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
@@ -60,7 +60,7 @@ class _Cloud5State extends State<Web7> {
 
           // Subtext
           const Text(
-            'Find answers to common questions about our cloud services and how we can help your business scale online.',
+            'Find answers to common questions about our digital marketing services and how we can help your business grow.',
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 16, color: Colors.black87),
           ),
