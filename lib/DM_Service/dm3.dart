@@ -6,7 +6,7 @@ class Am6 extends StatefulWidget { const Am6({super.key});
 
 class _Am6State extends State<Am6> { bool _showBenefits = false;
 
-final List<Map<String, String>> benefits = [ { 'icon': Icons.speed_outlined.codePoint.toString(), 'title': 'Accelerated Innovation', 'desc': 'Drive product and process innovation with cutting-edge IT tools.' }, { 'icon': Icons.security.codePoint.toString(), 'title': 'Improved Security', 'desc': 'Protect data, systems, and users with advanced security protocols.' }, { 'icon': Icons.settings.codePoint.toString(), 'title': 'Operational Efficiency', 'desc': 'Streamline processes and reduce costs across operations.' }, { 'icon': Icons.thumb_up.codePoint.toString(), 'title': 'Excellent UX', 'desc': 'Enhance user experience across digital touchpoints.' }, { 'icon': Icons.insights.codePoint.toString(), 'title': 'Actionable Insights', 'desc': 'Leverage data to drive smarter decisions and innovation.' }, { 'icon': Icons.sync.codePoint.toString(), 'title': 'Seamless Integration', 'desc': 'Ensure smooth interaction between legacy and modern systems.' }, ];
+final List<Map<String, String>> benefits = [ { 'icon': Icons.speed_outlined.codePoint.toString(), 'title': 'Accurate Targeting of Audiences', 'desc': 'Reach your potential clients with intelligent targeting based on their search intent, demographics, interests, and behaviors—no wasted impressions, just relevant reach.' }, { 'icon': Icons.security.codePoint.toString(), 'title': 'Data-Informed Selections', 'desc': 'Monitor the effectiveness of your campaigns in real time. We provide quantifiable, actionable insights to help you make better marketing decisions, from clicks to conversions.' }, { 'icon': Icons.settings.codePoint.toString(), 'title': 'Increased Visibility of the Brand', 'desc': 'We create brands, not just ads. Make a lasting impression your audience recalls and believes in by amplifying your voice across all media.' }, { 'icon': Icons.thumb_up.codePoint.toString(), 'title': 'Convert Traffic into Outcomes', 'desc': 'Use user-first strategies like compelling CTAs, retargeting ads, and high-converting landing pages to increase leads and sales.' }, { 'icon': Icons.insights.codePoint.toString(), 'title': 'Better Returns, Smarter Spending', 'desc': 'Our affordable digital solutions outperform traditional marketing, boosting visibility and ROI without breaking the bank.' }, { 'icon': Icons.sync.codePoint.toString(), 'title': 'Think Global, Go Local', 'desc': 'Digital tools make your market global. Expand across cities, countries, and continents with scalable, reach-oriented strategies.' }, ];
 
 @override Widget build(BuildContext context) { final screenWidth = MediaQuery.of(context).size.width;
 
@@ -18,13 +18,13 @@ return Container(
     crossAxisAlignment: CrossAxisAlignment.center,
     children: [
       const Text(
-        "Advantages of Our IT Services for Automobiles",
+        "Advantages of Our IT Services for Digital Marketing",
         textAlign: TextAlign.center,
         style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
       ),
       const SizedBox(height: 16),
       const Text(
-        "Our comprehensive automotive IT solutions deliver tangible benefits that drive innovation, enhance efficiency, and create competitive advantages for your business.",
+        "Digital marketing isn't just an option in today's constantly linked society; it's a game-changer. Find out how our strategies maintain your brand ahead of the curve and drive actual company success.",
         textAlign: TextAlign.center,
         style: TextStyle(fontSize: 16, color: Colors.black87),
       ),
