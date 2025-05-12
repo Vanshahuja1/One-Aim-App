@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:video_player/video_player.dart';
 import 'dart:async';
+import 'Contact/containmain.dart'; // Your file and class
 
 class Demo1 extends StatefulWidget {
   const Demo1({super.key});
@@ -16,11 +18,14 @@ class _Demo1State extends State<Demo1> {
   int _charIndex = 0;
   Timer? _timer;
   bool _showVideo = false;
+  VideoPlayerController? _videoController;
+  bool _videoAvailable = false;
 
   @override
   void initState() {
     super.initState();
     _startTypingCycle();
+    _initializeVideo();
   }
 
   void _startTypingCycle() {
@@ -48,16 +53,32 @@ class _Demo1State extends State<Demo1> {
     });
   }
 
+  Future<void> _initializeVideo() async {
+    try {
+      final controller = VideoPlayerController.asset('assets/demo.mp4');
+      await controller.initialize();
+      controller.setLooping(true);
+      setState(() {
+        _videoController = controller;
+        _videoAvailable = true;
+      });
+    } catch (e) {
+      setState(() {
+        _videoAvailable = false;
+      });
+    }
+  }
+
   @override
   void dispose() {
     _timer?.cancel();
+    _videoController?.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final isWideScreen = screenWidth > 600;
 
     return Container(
       width: double.infinity,
@@ -128,7 +149,12 @@ class _Demo1State extends State<Demo1> {
             alignment: WrapAlignment.center,
             children: [
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const ContainMain()),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   padding:
                       const EdgeInsets.symmetric(vertical: 14, horizontal: 24),
@@ -144,6 +170,11 @@ class _Demo1State extends State<Demo1> {
                 onPressed: () {
                   setState(() {
                     _showVideo = !_showVideo;
+                    if (_videoController != null && _showVideo) {
+                      _videoController!.play();
+                    } else {
+                      _videoController?.pause();
+                    }
                   });
                 },
                 icon: const Icon(Icons.play_circle_fill),
@@ -169,18 +200,24 @@ class _Demo1State extends State<Demo1> {
                   width: screenWidth > 600 ? 600 : double.infinity,
                   height: 200,
                   color: Colors.black12,
-                  child: const Center(
-                    child: Text(
-                      'Video Player Placeholder',
-                      style: TextStyle(color: Colors.black54),
-                    ),
-                  ),
+                  child: _videoAvailable && _videoController != null
+                      ? AspectRatio(
+                          aspectRatio: _videoController!.value.aspectRatio,
+                          child: VideoPlayer(_videoController!),
+                        )
+                      : const Center(
+                          child: Text(
+                            'Video Player Placeholder',
+                            style: TextStyle(color: Colors.black54),
+                          ),
+                        ),
                 ),
                 IconButton(
                   icon: const Icon(Icons.close, color: Colors.white),
                   onPressed: () {
                     setState(() {
                       _showVideo = false;
+                      _videoController?.pause();
                     });
                   },
                 ),
