@@ -29,7 +29,7 @@ return Container(
           child: const Text(
             'What are the Mordern Healthcare Solution Requirements?',
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color:Colors.white,),
           ),
         ),
       ),
