@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:visibility_detector/visibility_detector.dart';
-class HomeSection extends StatelessWidget {
-  const HomeSection({super.key});
+class Home3 extends StatelessWidget {
+  const Home3({super.key});
 
   @override
   Widget build(BuildContext context) {
