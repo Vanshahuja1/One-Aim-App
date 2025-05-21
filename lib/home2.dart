@@ -165,7 +165,9 @@ class _ServiceCardsSectionState extends State<ServiceCardsSection> {
                   ),
                   SizedBox(height: 10),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, service['href']);
+                    },
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
