@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Footer extends StatelessWidget {
   const Footer({super.key});
@@ -14,7 +15,6 @@ class Footer extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Heading
           const Center(
             child: Text(
               'OneAim',
@@ -33,10 +33,19 @@ class Footer extends StatelessWidget {
               width: 120,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  HoverIcon(assetPath: 'assets/linkedin.png', url: 'https://www.linkedin.com/feed/'),
-                  HoverIcon(assetPath: 'assets/icons/instagram.png', url: 'https://instagram.com'),
-                  HoverIcon(assetPath: 'assets/icons/facebook.png', url: 'https://facebook.com'),
+                children: const [
+                  HoverIcon(
+                    imageUrl: 'https://cdn-icons-png.flaticon.com/512/145/145802.png',
+                    url: 'https://www.facebook.com/oneaimitsolutions',
+                  ),
+                  HoverIcon(
+                    imageUrl: 'https://cdn-icons-png.flaticon.com/512/174/174857.png',
+                    url: 'https://www.linkedin.com/company/one-aim-it-solutions/',
+                  ),
+                  HoverIcon(
+                    imageUrl: 'https://cdn-icons-png.flaticon.com/512/1384/1384063.png',
+                    url: 'https://www.instagram.com/oneaimitsolutions?igsh=MWhqemphM2dwdTByNA==',
+                  ),
                 ],
               ),
             ),
@@ -44,83 +53,81 @@ class Footer extends StatelessWidget {
 
           const SizedBox(height: 20),
           const Divider(color: Colors.white),
-
           const SizedBox(height: 30),
 
           isMobile
               ? Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    FooterSection(title: "Services", items: [
-                      "Cloud Services",
-                      "Development Services",
-                      "AI-ML Services",
-                      "Digital Marketing"
-                    ]),
-                    SizedBox(height: 20),
-                    FooterSection(title: "Industries", items: [
-                      "Automobile",
-                      "E-Commerce",
-                      "Telecommunication",
-                      "Education",
-                      "Healthcare",
-                      "Government & Defense",
-                      "Finance & Banking"
-                    ]),
-                    SizedBox(height: 20),
-                    FooterSection(title: "Company", items: [
-                      "About",
-                      "FAQ",
-                      "Blog",
-                      "Contact"
-                    ]),
-                    SizedBox(height: 20),
-                    FooterSection(title: "Legal", items: [
-                      "Privacy",
-                      "Terms and Conditions"
-                    ]),
-                  ],
-                )
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              FooterSection(title: "Services", items: [
+                "Cloud Services",
+                "Development Services",
+                "AI-ML Services",
+                "Digital Marketing"
+              ]),
+              SizedBox(height: 20),
+              FooterSection(title: "Industries", items: [
+                "Automobile",
+                "E-Commerce",
+                "Telecommunication",
+                "Education",
+                "Healthcare",
+                "Government & Defense",
+                "Finance & Banking"
+              ]),
+              SizedBox(height: 20),
+              FooterSection(title: "Company", items: [
+                "About",
+                "FAQ",
+                "Blog",
+                "Contact"
+              ]),
+              SizedBox(height: 20),
+              FooterSection(title: "Legal", items: [
+                "Privacy",
+                "Terms and Conditions"
+              ]),
+            ],
+          )
               : Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Expanded(
-                      child: FooterSection(title: "Services", items: [
-                        "Cloud Services",
-                        "Development Services",
-                        "AI-ML Services",
-                        "Digital Marketing"
-                      ]),
-                    ),
-                    Expanded(
-                      child: FooterSection(title: "Industries", items: [
-                        "Automobile",
-                        "E-Commerce",
-                        "Telecommunication",
-                        "Education",
-                        "Healthcare",
-                        "Government & Defense",
-                        "Finance & Banking"
-                      ]),
-                    ),
-                    Expanded(
-                      child: FooterSection(title: "Company", items: [
-
-                        "About",
-                        "FAQ",
-                        "Blog",
-                        "Contact"
-                      ]),
-                    ),
-                    Expanded(
-                      child: FooterSection(title: "Legal", items: [
-                        "Privacy",
-                        "Terms and Conditions"
-                      ]),
-                    ),
-                  ],
-                )
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              Expanded(
+                child: FooterSection(title: "Services", items: [
+                  "Cloud Services",
+                  "Development Services",
+                  "AI-ML Services",
+                  "Digital Marketing"
+                ]),
+              ),
+              Expanded(
+                child: FooterSection(title: "Industries", items: [
+                  "Automobile",
+                  "E-Commerce",
+                  "Telecommunication",
+                  "Education",
+                  "Healthcare",
+                  "Government & Defense",
+                  "Finance & Banking"
+                ]),
+              ),
+              Expanded(
+                child: FooterSection(title: "Company", items: [
+                  "About",
+                  "FAQ",
+                  "Blog",
+                  "Contact"
+                ]),
+              ),
+              Expanded(
+                child: FooterSection(title: "Legal", items: [
+                  "Privacy",
+                  "Terms and Conditions"
+                ]),
+              ),
+            ],
+          )
         ],
       ),
     );
@@ -195,10 +202,10 @@ class _HoverLinkState extends State<HoverLink> {
 }
 
 class HoverIcon extends StatefulWidget {
-  final String assetPath;
+  final String imageUrl;
   final String url;
 
-  const HoverIcon({super.key, required this.assetPath, required this.url});
+  const HoverIcon({super.key, required this.imageUrl, required this.url});
 
   @override
   State<HoverIcon> createState() => _HoverIconState();
@@ -210,36 +217,38 @@ class _HoverIconState extends State<HoverIcon> {
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
-      cursor: SystemMouseCursors.click,
       onEnter: (_) => setState(() => _hovering = true),
       onExit: (_) => setState(() => _hovering = false),
+      cursor: SystemMouseCursors.click,
       child: GestureDetector(
-        onTap: () {
-          // Implement navigation if needed
+        onTap: () async {
+          final uri = Uri.parse(widget.url);
+          if (await canLaunchUrl(uri)) {
+            await launchUrl(uri);
+          }
         },
-        child: AnimatedContainer(
-          duration: const Duration(milliseconds: 200),
-          height: 30,
-          width: 30,
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: _hovering ? Colors.white70 : Colors.transparent,
+        child: Transform(
+          transform: _hovering ? (Matrix4.identity()..scale(1.1)) : Matrix4.identity(),
+          alignment: Alignment.center,
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 200),
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: _hovering ? Colors.white70 : Colors.transparent,
+              ),
+              borderRadius: BorderRadius.circular(6),
             ),
-            borderRadius: BorderRadius.circular(6),
-          ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(4),
-            child: Image.asset(
-              widget.assetPath,
-              fit: BoxFit.contain,
-              color: Colors.white,
-              errorBuilder: (context, error, stackTrace) {
-                return Icon(
-                  Icons.link,
-                  color: _hovering ? Colors.white70 : Colors.white54,
-                  size: 20,
-                );
-              },
+            padding: const EdgeInsets.all(4),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(4),
+              child: Image.network(
+                widget.imageUrl,
+                width: 24,
+                height: 24,
+                errorBuilder: (context, error, stackTrace) {
+                  return const Icon(Icons.link, color: Colors.white);
+                },
+              ),
             ),
           ),
         ),
