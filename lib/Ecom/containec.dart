@@ -7,7 +7,7 @@ import 'ec5.dart';
 import 'ec6.dart';
 import 'ec7.dart';
 import 'ec8.dart';
-import 'ec9.dart';
+
 import "ec10.dart";
 import "ec11.dart";
 import "ec12.dart";
@@ -36,7 +36,7 @@ class ContainEC extends StatelessWidget {
                 Am6(),
                 Am7(),
                 AM8(),
-                AM9(),
+
                 AmTcSection(),
                 Cloud4(),
                 Cloud5(),
