@@ -38,6 +38,14 @@ class ContactInfoSection extends StatelessWidget {
             'Anukampa, Near Sanskrit College',
             'Bhankrota, Jaipur'
           ]),
+        const SizedBox(height: 16),
+          buildContactCard(Icons.location_on, 'Office Address', [
+            ' 5590 Satinleaf way', 'Sanramon CA 94582' 
+          ]),
+          const SizedBox(height: 16),
+          buildContactCard(Icons.location_on, 'Office Address', [
+            '2/41/2 , 1st Floor, Sadar Bazar' , 'Moradabad Pahari ,PO.Delhi Cantt', 'Dist:- South West Delhi,110010'
+          ]),
           const SizedBox(height: 32),
 
           Text(
