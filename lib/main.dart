@@ -1,13 +1,10 @@
-Main :
-
 import 'package:flutter/material.dart';
 import 'containmain.dart';
 import 'Service/containcloud.dart';
 import 'Web_Service/containweb.dart';
 import 'AI_Service/containai.dart';
-// import 'path_to/DigitalMarketingPage.dart'; // Uncomment and correct as needed
-// Uncomment and correct as needed
 import 'DM_Service/containdm.dart';
+
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -22,8 +19,7 @@ class MyApp extends StatelessWidget {
         '/cloud-services': (context) => ContainCloud(),
         '/development-services': (context) => ContainWeb(),
         '/ai-ml-services': (context) => ContainAI(),
-        '/digital-marketing': (context) => ContainDM(), // Replace with your widget
-         // Replace with your widget
+        '/digital-marketing': (context) => ContainDM(), 
       },
     );
   }
