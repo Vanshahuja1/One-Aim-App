@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class AM1 extends StatelessWidget { const AM1({super.key});
 
 @override Widget build(BuildContext context) { final screenWidth = MediaQuery.of(context).size.width;
-
+ 
 return Container(
   color: Colors.grey[900],
   padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
