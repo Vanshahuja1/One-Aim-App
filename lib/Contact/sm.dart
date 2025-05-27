@@ -79,7 +79,7 @@ class ContactInfoSection extends StatelessWidget {
               buildSocialLogo(
                 'https://cdn-icons-png.flaticon.com/512/733/733547.png',
                 'Facebook',
-                'https://www.facebook.com/yourpage',
+                'https://www.facebook.com/oneaimitsolutions/',
               ),
             ],
           ),
