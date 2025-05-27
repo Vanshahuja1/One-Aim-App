@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Cloud6 extends StatelessWidget {
   const Cloud6({super.key});
-
+ 
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
